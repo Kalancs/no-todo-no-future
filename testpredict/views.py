@@ -39,8 +39,8 @@ def TODOLIST(request):
 
         q=task_class(item=task,todo_pred=pred,True_pred=pred)
         q.save()
-        
-        
+
+
 
         return render(request, 'testpredict/home2.html', {'all_items': all_items})
   else:
@@ -50,8 +50,7 @@ def TODOLIST(request):
       return render(request, 'testpredict/home2.html', {'all_items': all_items})
 
 def about(request):
-  context = {'first_name': 'Kazufumi', 'last_name': 'Honda'}
-  return render(request, 'testpredict/about.html', context)
+  return render(request, 'NO-TODO-NO-FUTURE')
 
 def delete(request, list_id):
   #item = List.objects.get(pk=list_id)
@@ -97,7 +96,7 @@ def edit(request, list_id):
     return render(request, 'testpredict/edit.html', {'item': item})
 '''
 def index(request):
-    
+
     return PostTodo(request)
     #textpredict()
     #return HttpResponse("index page")
