@@ -3,6 +3,8 @@ from picklefield.fields import PickledObjectField
 
 #from django.contrib.postgres.fields import JSONField
 
+from datetime import date
+
 
 #from django.contrib.postgres.fields import JSONField
 #from django.contrib.postgres.fields import JSONField
@@ -19,7 +21,7 @@ class Taskclassification(models.Model):
     #  tag = models.CharField(max_length=50)
     #  tag_fixed = models.CharField(max_length=50)
     created_at = models.DateTimeField('投稿時間', auto_now=True)
-    deadline = models.DateTimeField('〆切日時', auto_now=True)
+    deadline = models.DateTimeField('〆切日時')
     #####
 
     def __str__(self):

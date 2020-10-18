@@ -17,7 +17,8 @@
     {% endfor 1%}
 {% endif %}
 
-    <h1>Today: {% now "SHORT_DATETIME_FORMAT" %}</h1>
+    <h1>Today: {{ deadline }}</h1>
+
 
     {% if all_items %}
     <table class="table table-bordered">

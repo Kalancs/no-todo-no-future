@@ -10,6 +10,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
+   <!-- Bootstrap JS -->
+ 14     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jqu    ery-ui.css">
+ 15     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha    256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></    script>
+ 16     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery    .ui.datepicker-ja.min.js"></script>
+
     <title>明日が来ないTo-Do List</title>
   </head>
   <body>
@@ -30,7 +35,17 @@
             {% csrf_token %}
 <!--            <input class="form-control mr-sm-2" type="search" placeholder="To-Do Item" aria-label="Search" name="item">
 -->
-             <input class="form-control utf8mb4" type="search" placeholder="To-Do Item" aria-label="Search" name="item">
+             <input class="form-control mr-sm-2" type="search" placeholder="To-Do Item" aria-label="Search" name="item">
+             <!-- input date from carender-->
+             <input class="form-control mr-sm-2" type="date" id="id_deadline" name="deadline">
+             <script>
+                $(function () {
+                  let dateFormat = 'yy-mm-dd';
+                  $('#id_deadline').datepicker({
+                    dateFormat: dateFormat
+                  });
+                });
+             </script>
             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add To List</button>
           </form>
         </div>
