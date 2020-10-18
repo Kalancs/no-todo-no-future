@@ -94,6 +94,7 @@ def edit(request, list_id):
     item = task_class.objects.get(pk=list_id)
     #return render(request, 'todoapp/edit.html', {'item': item})
     return render(request, 'testpredict/edit.html', {'item': item})
+
 '''
 def index(request):
 
