@@ -3,6 +3,8 @@ from picklefield.fields import PickledObjectField
 
 #from django.contrib.postgres.fields import JSONField
 
+from datetime import date
+
 
 #from django.contrib.postgres.fields import JSONField
 #from django.contrib.postgres.fields import JSONField

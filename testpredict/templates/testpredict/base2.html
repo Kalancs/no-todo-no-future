@@ -35,17 +35,17 @@
             {% csrf_token %}
 <!--            <input class="form-control mr-sm-2" type="search" placeholder="To-Do Item" aria-label="Search" name="item">
 -->
-             <input class="form-control utf8mb4" type="search" placeholder="To-Do Item" aria-label="Search" name="item">
+             <input class="form-control mr-sm-2" type="search" placeholder="To-Do Item" aria-label="Search" name="item">
              <!-- input date from carender-->
- 39          <input class="form-control mr-sm-2" type="date" id="id_deadline    " name="deadline">
- 40          <script>
- 41             $(function () {
- 42               let dateFormat = 'yy-mm-dd';
- 43               $('#id_deadline').datepicker({
- 44                 dateFormat: dateFormat
- 45               });
- 46             });
- 47           </script>
+             <input class="form-control mr-sm-2" type="date" id="id_deadline" name="deadline">
+             <script>
+                $(function () {
+                  let dateFormat = 'yy-mm-dd';
+                  $('#id_deadline').datepicker({
+                    dateFormat: dateFormat
+                  });
+                });
+             </script>
             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add To List</button>
           </form>
         </div>

@@ -15,6 +15,8 @@ from testpredict.models import Taskclassification as task_class
 from .forms import TodoForm
 from django.contrib import messages
 
+from datetime import datetime
+
 # Create your views here.
 #def home(request):
 def TODOLIST(request):
@@ -37,12 +39,25 @@ def TODOLIST(request):
         pred = predict.predict(str(task),False)
         print(pred)
 
-        q=task_class(item=task,todo_pred=pred,True_pred=pred)
+        deadline = form.cleaned_data["deadline"]
+        q=task_class(item=task,todo_pred=pred,True_pred=pred,deadline=deadline)
         q.save()
 
+        """
+        oldest = task_class.objects.order_by('deadline').first()
+        oldest_deadline = oldest.deadline
+        deadline = datetime.today()
+        if  oldest_deadline < deadline:
+            deadline = oldest_deadline
+        """
 
+        deadline = datetime.today()
+#        count = task_class.objects.views_list('item',flat=True)
+#        if len(count) != 0:
+#            deadline = datetime.today()
 
-        return render(request, 'testpredict/home2.html', {'all_items': all_items})
+        return render(request, 'testpredict/home2.html', {'all_items': all_items, 'deadline': deadline})
+#        return render(request, 'testpredict/home2.html', {'all_items': all_items})
   else:
       #all_items = List.objects.all
       all_items = task_class.objects.all
